@@ -1,18 +1,25 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-01 13:44:36
- * @LastEditTime: 2021-03-02 11:30:06
+ * @LastEditTime: 2021-03-02 15:33:36
  * @LastEditors: wangyuan
  * @Description:
  */
+import { useDispatch, connect } from 'umi';
 import styles from './index.scss';
 import { Button } from 'antd-mobile';
 import { getWXContext } from 'wx-server-sdk';
 
-export default function IndexPage() {
+const IndexPage = () => {
+  const dispacth = useDispatch();
   const wx = () => {
-    console.log(123);
-
+    dispacth({
+      type: 'home/query',
+      payload: {
+        acount: 'wy',
+        password: 123456,
+      },
+    });
     window.wx.checkJsApi({
       jsApiList: ['chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
       success: function (res) {
@@ -31,4 +38,6 @@ export default function IndexPage() {
       </Button>
     </div>
   );
-}
+};
+
+export default IndexPage;

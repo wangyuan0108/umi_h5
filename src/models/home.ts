@@ -1,7 +1,7 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-02 14:13:33
- * @LastEditTime: 2021-03-02 14:18:46
+ * @LastEditTime: 2021-03-02 16:00:10
  * @LastEditors: wangyuan
  * @Description:
  */
@@ -18,7 +18,7 @@ export interface IndexModelState {
   name: string;
 }
 export interface IndexModelType {
-  namespace: 'index';
+  namespace: 'home';
   state: IndexModelState;
   effects: {
     query: Effect;
@@ -32,16 +32,14 @@ export interface IndexModelType {
 }
 
 const IndexModel: IndexModelType = {
-  namespace: 'index',
+  namespace: 'home',
   state: {
     name: 'uuiioo',
   },
   effects: {
     *query({ payload }, { call, put }) {
-      // const a = yield call(
-      //   login,
-      //   payload,
-      // )
+      const a = yield call(login, payload);
+      console.log('login======', a);
     },
   },
   reducers: {
