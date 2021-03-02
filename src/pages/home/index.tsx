@@ -1,13 +1,13 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-01 13:44:36
- * @LastEditTime: 2021-03-02 16:10:18
+ * @LastEditTime: 2021-03-02 16:23:25
  * @LastEditors: wangyuan
  * @Description:
  */
 import { useDispatch, connect } from 'umi';
 import styles from './index.scss';
-import { Button } from 'antd-mobile';
+import { Button, NavBar, Icon } from 'antd-mobile';
 import { getWXContext } from 'wx-server-sdk';
 
 const IndexPage = () => {
@@ -31,6 +31,16 @@ const IndexPage = () => {
   };
   return (
     <div>
+      <NavBar
+        mode="dark"
+        leftContent="Back"
+        rightContent={[
+          <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+          <Icon key="1" type="ellipsis" />,
+        ]}
+      >
+        NavBar
+      </NavBar>
       <div className={styles.title}>这是一个h5</div>
       <Button type="warning" onClick={wx}>
         点击

@@ -1,7 +1,7 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-01 13:44:36
- * @LastEditTime: 2021-03-02 13:55:46
+ * @LastEditTime: 2021-03-02 16:22:07
  * @LastEditors: wangyuan
  * @Description:
  */
@@ -18,7 +18,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  routes: [{ path: '/', component: '@/pages/home/index' }],
   fastRefresh: {},
   extraPostCSSPlugins: [
     pxtorem({
