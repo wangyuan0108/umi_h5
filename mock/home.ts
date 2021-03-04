@@ -1,7 +1,7 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-02 15:29:40
- * @LastEditTime: 2021-03-02 15:31:00
+ * @LastEditTime: 2021-03-04 11:37:35
  * @LastEditors: wangyuan
  * @Description:
  */
@@ -12,6 +12,8 @@ export default {
 
   // GET 可忽略
   'POST /api/admin/auth/login': { id: 1 },
+
+  '/api/login/captcha': { success: true },
 
   // 支持自定义函数，API 参考 express@4
   'POST /api/users/create': (req, res) => {

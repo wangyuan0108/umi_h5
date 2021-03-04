@@ -1,7 +1,7 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-02 14:13:33
- * @LastEditTime: 2021-03-02 16:00:10
+ * @LastEditTime: 2021-03-04 11:46:25
  * @LastEditors: wangyuan
  * @Description:
  */
@@ -13,7 +13,7 @@
  * @Description:
  */
 import { Effect, ImmerReducer, Reducer, Subscription } from 'umi';
-import { login } from '@/services/loginService';
+import { getFakeCaptcha } from '@/services/loginService';
 export interface IndexModelState {
   name: string;
 }
@@ -21,7 +21,7 @@ export interface IndexModelType {
   namespace: 'home';
   state: IndexModelState;
   effects: {
-    query: Effect;
+    login: Effect;
   };
   reducers: {
     save: Reducer<IndexModelState>;
@@ -37,9 +37,9 @@ const IndexModel: IndexModelType = {
     name: 'uuiioo',
   },
   effects: {
-    *query({ payload }, { call, put }) {
-      const a = yield call(login, payload);
-      console.log('login======', a);
+    *login({ payload }, { call, put }) {
+      const a = yield call(getFakeCaptcha, payload);
+      console.log('login======1111', a, payload);
     },
   },
   reducers: {

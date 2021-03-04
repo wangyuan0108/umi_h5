@@ -1,7 +1,7 @@
 /*
  * @Author: wangyuan
  * @Date: 2021-03-01 13:44:36
- * @LastEditTime: 2021-03-02 16:23:25
+ * @LastEditTime: 2021-03-04 11:47:12
  * @LastEditors: wangyuan
  * @Description:
  */
@@ -12,12 +12,13 @@ import { getWXContext } from 'wx-server-sdk';
 
 const IndexPage = () => {
   const dispacth = useDispatch();
-  const wx = () => {
+  const login = () => {
+    console.log('click=======');
+
     dispacth({
-      type: 'home/query',
+      type: 'home/login',
       payload: {
-        acount: 'wy',
-        password: 123456,
+        mobile: '1234567',
       },
     });
     window.wx.checkJsApi({
@@ -42,7 +43,7 @@ const IndexPage = () => {
         NavBar
       </NavBar>
       <div className={styles.title}>这是一个h5</div>
-      <Button type="warning" onClick={wx}>
+      <Button type="warning" onClick={login}>
         点击
       </Button>
     </div>
